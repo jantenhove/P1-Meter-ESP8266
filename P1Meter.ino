@@ -204,8 +204,9 @@ bool decodeTelegram(int len) {
   {
     //add to crc calc 
     currentCRC=CRC16(currentCRC,(unsigned char*)telegram+endChar, 1);
-    char messageCRC[4];
+    char messageCRC[5];
     strncpy(messageCRC, telegram + endChar + 1, 4);
+    messageCRC[4]=0; //thanks to HarmOtten (issue 5)
     if(outputOnSerial)
     {
       for(int cnt=0; cnt<len;cnt++)
