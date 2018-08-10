@@ -29,7 +29,7 @@ long mGAS = 0;    //Meter reading Gas
 long prevGAS = 0;
 
 
-#define MAXLINELENGTH 64 // longest normal line is 47 char (+3 for \r\n\0)
+#define MAXLINELENGTH 128 // longest normal line is 47 char (+3 for \r\n\0)
 char telegram[MAXLINELENGTH];
 
 #define SERIAL_RX     D5  // pin for SoftwareSerial RX
